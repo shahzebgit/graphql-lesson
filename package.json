@@ -4,10 +4,16 @@
   "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-link-http": "^1.5.17",
     "firebase": "6.0.2",
+    "graphql": "^15.3.0",
     "node-sass": "4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "pnpm": "^5.5.3",
+    "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^16.13.1",
     "react-redux": "7.0.3",
     "react-router-dom": "5.0.0",
     "react-stripe-checkout": "2.6.3",
@@ -17,6 +23,7 @@
     "reselect": "4.0.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.4.0",
     "react-scripts": "3.0.0"
   },
   "resolutions": {
