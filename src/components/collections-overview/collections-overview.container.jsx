@@ -8,7 +8,7 @@ import Spinner from "../spinner/spinner.component";
 
 const GET_COLLECTIONS = gql`
   {
-    collections { 
+    collections {
       id
       title
       items {
@@ -24,12 +24,10 @@ const GET_COLLECTIONS = gql`
 const CollectionsOverviewContainer = () => (
   <Query query={GET_COLLECTIONS}>
     {({ loading, error, data }) => {
-      console.log({ loading });
-      console.log({ error });
-      console.log({ data });
-
+      if (error) return console.log({ error });
       if (loading) return <Spinner />;
-      return <CollectionsOverview collections={data.collections} />;
+      const { collections } = data;
+      return <CollectionsOverview collections={collections} />;
     }}
   </Query>
 );
