@@ -10,9 +10,9 @@ import { ApolloClient } from "apollo-boost";
 import { createHttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { resolvers, typeDefs } from "./graphql//resolvers";
+import {default as App }from './app/App.container'
 
 import "./index.css";
-import App from "./App";
 
 const httpLink = createHttpLink({
   uri: "https://crwn-clothing.com",
@@ -32,6 +32,7 @@ client.writeData({
     cartHidden: true,
     cartItems:[],
     itemCount:0,
+    currentUser:null,
   },
 });
 
