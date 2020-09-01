@@ -10,7 +10,8 @@ import { ApolloClient } from "apollo-boost";
 import { createHttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { resolvers, typeDefs } from "./graphql//resolvers";
-import {default as App }from './app/App.container'
+import { default as App } from "./app/App.container";
+import { default as data } from "./graphql/initial_data";
 
 import "./index.css";
 
@@ -27,14 +28,7 @@ const client = new ApolloClient({
   resolvers,
 });
 
-client.writeData({
-  data: {
-    cartHidden: true,
-    cartItems:[],
-    itemCount:0,
-    currentUser:null,
-  },
-});
+client.writeData({ data });
 
 ReactDOM.render(
   <ApolloProvider client={client}>
